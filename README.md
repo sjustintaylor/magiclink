@@ -7,7 +7,16 @@ MagicLink is a user authentication microservice built around magic link authenti
 4. Refresh session with refresh token
 
 Tokens are signed with asymmetric keys, so your api servers can verify an authentication token with the session service's public key. 
-After a session is deleted, the refresh user's token will no longer work. 
+After a session is deleted, the user's refresh  token will no longer work. 
+
+### Token rules
+1. Links can only be used once
+2. A link token can only be redeemed if the email address it was sent with is provided as well
+3. A refresh token can only be used once
+4. An auth token expires in 15 minutes
+5. Deleting a session invalidates any current refresh and auth tokens.
+6. The refresh token is stored in a `secure httpOnly` cookie
+7. The auth token should be stored in browser memory (ie react state). Use localstorage events to trigger log out across multiple windows. It should never actually be stored in LocalStorage
 
 ## Installation
 
