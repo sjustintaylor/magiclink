@@ -34,7 +34,7 @@ For development purposes:
 yarn start
 ```
 
-For production, deploy using PM2 or similar. An ecosystem template will be available once the project reachs v1.0.
+For production, deploy using PM2 or similar behind a reverse proxy such as Caddy Server. An ecosystem template will be available once the project reachs v1.0.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

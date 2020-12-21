@@ -34,14 +34,4 @@ router.patch("/", async (req, res) => {
   res.send({}, 200);
 });
 
-/**
- * Checks the validity of an auth token.
- * Useful for downstream routes that need another layer of protection (change password/delete account for instance).
- * Secured by API Key
- */
-
-router.post("/token",  async (req, res) => {
-  res.send({}, 200);
-})
-
 module.exports = router;
